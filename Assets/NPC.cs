@@ -5,23 +5,34 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
+    public UIManager manager;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Something collided");
-        if(collision.gameObject.CompareTag("Player") )
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered here");
+            manager.TextUI.SetActive(true);
         }
     }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            manager.TextUI.SetActive(false);
+        }
+        // print("No longer in contact with " + other.transform.name);
+    }
+
+
 }

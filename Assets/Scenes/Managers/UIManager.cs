@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject TextUI;
     void Start()
     {
-
+        TextUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
