@@ -12,16 +12,14 @@ public class GameManager : MonoBehaviour
 
     public UIManager uIManager;
     public QuestLoader[] QuestLoader;
+    public Dictionary<string, string[]> DialogueInteractions = new Dictionary<string, string[]>() {
+        {"Maria", new string[ ] {"Hello", "Goodbye"} },
+        {"Carlos", new string[ ] {"Hello", "Goodbye"} },
+    };
     QuestManagerScript qm = QuestManagerScript.Instance;
     List<NPC> GameNPCs = new List<NPC>();
-    void Start()
-    {
-        var objs = FindObjectsOfType<QuestGiver>();
-        Debug.Log("The total amount of quest givers: " + objs.Length);
-    }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
 
     }

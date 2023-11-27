@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestManagerScript
 {
-    Dictionary<long, Quest> QuestAndNPCsValues = new Dictionary<long, Quest>();
+    Dictionary<string, Quest> QuestAndNPCsValues = new Dictionary<string, Quest>();
     private static QuestManagerScript instance;
     public static QuestManagerScript Instance
     {
@@ -18,15 +18,20 @@ public class QuestManagerScript
             return instance;
         }
     }
-    public void ActivateQuest(long questId)
+    public void ActivateQuest(string questId)
     {
         QuestAndNPCsValues[questId].ShouldShowToPlayer = true;
         // TODO:
         // Show some type of message for the player
     }
-    public Dictionary<long, Quest> GetQuestDict()
+    public Dictionary<string, Quest> GetQuestDict()
     {
         return QuestAndNPCsValues;
+    }
+
+    public Quest GetQuest(string NpcName)
+    {
+        return QuestAndNPCsValues[NpcName];
     }
 
     public void LoadQuestsOnStart(QuestLoader[] quests)

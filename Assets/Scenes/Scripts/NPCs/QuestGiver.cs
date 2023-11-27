@@ -15,8 +15,18 @@ public class QuestGiver : NPC, IQuestGiver
 
     public override void HandlePlayerInteraction()
     {
+
         Debug.Log("Interacting");
-        GM.uIManager.DisplayDialogUI();
+        // Get the interaction
+        string[] dialogue = GM.DialogueInteractions[this.NPCName];
+
+        Quest currentQuest = questManager.GetQuest(this.NPCName);
+        // Get the current interaction
+
+
+
+        GM.uIManager.DisplayDialogUI(dialogue);
+        // Give the player the 
 
     }
 

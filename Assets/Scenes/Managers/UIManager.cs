@@ -23,8 +23,10 @@ public class UIManager : MonoBehaviour
         OpenedUIElement.gameObject.SetActive(false);
     }
 
-    public void DisplayDialogUI()
+    public void DisplayDialogUI(string[] dialogue)
     {
         InfoUI.gameObject.SetActive(true);
+        //Text
+        // InfoUI.gameObject.
     }
 }
