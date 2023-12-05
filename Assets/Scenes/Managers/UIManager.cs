@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
         if(diagIndex > conversation.Length - 1)
         {
-            // end conversation
+            
             diagIndex = 0;
         }
 
